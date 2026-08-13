@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Birthday Gift</title>
+    </head>
+    <body>
+     <section>
+        <h1>Time Left for next birthady</h1>
+        <h2 id="timer">Loading...</h2>
+        <img src="C:\Users\yourl\Downloads\pexels-cake-1835443_1920.jpg" alt="happy birthday cake" width="1500" height="1000" >
+     </section> 
+     <script>
+        var target=new Date("july 9, 2027 00:00:00").getTime();
+        setInterval(function(){
+            var now =new Date().getTime();
+            var diff = target - now;
+            var days = Math.floor(diff/(1000*60*60*24));
+            var hours=Math.floor((diff %(1000*60*60*24))/(1000*60*60));
+            var minutes=Math.floor((diff %(1000*60*60))/(1000*60));
+            var seconds =Math.floor((diff %(1000*60))/1000);
+
+            document.getElementById("timer").innerHTML=days+"d "+hours+"h "+minutes+"m "+seconds+"s ";
+
+            if(diff<0){
+                document.getElementById("timer").innerHTML="HAPPY BIRTHDAY";
+            }
+        },1000);
+     </script>
+    </body>
+</html>
